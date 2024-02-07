@@ -45,6 +45,7 @@ public class Run {
 				System.out.print("Enter the task ID that you wish to remove: ");
 				taskId = scan.nextInt();
 				taskManager.removeTask(taskId);	
+				
 			}
 		
 		}while(!choice.equalsIgnoreCase("d"));

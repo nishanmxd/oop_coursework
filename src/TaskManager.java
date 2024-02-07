@@ -2,11 +2,18 @@ import java.util.HashSet;
 
 public class TaskManager {
 	
-	private HashSet<Task> taskList = new HashSet<>(); //using HashSet to prevent duplication
+private HashSet<Task> taskList = new HashSet<>(); //using HashSet to prevent duplication
 	
-	public Boolean addTask(Task newTask) {
+	public boolean addTask(Task newTask) {
+		for (int i =0; i<taskList.toArray().length; i++){
+			Task taskInList = (Task) taskList.toArray()[i];
+			
+			if (taskInList.getId() == newTask.getId()){
+				return false;
+			}
+		}
 		
-		return taskList.add(newTask);  //successfully adding a new task
+		return taskList.add(newTask); //successfully adding a new task
 		
 	}
 	
@@ -20,11 +27,14 @@ public class TaskManager {
 				return true;   //successfully removing a task
 			}		
 			
-		}
-		System.out.println("Entered ID " + taskId + " is incorrect.");
+		}		
+			System.out.println("Entered ID " + taskId + " is incorrect.");
+			
+			return false;       //unsuccessful feedback
 		
-		return false;       //unsuccessful feedback
-	}
+		}
+		
+		
 	
 	public int getSize() {
 		
@@ -33,6 +43,7 @@ public class TaskManager {
 	}
 	
 	public void displayTask(){
+		
 		
 		if(taskList.isEmpty()) {
 			System.out.println("No tasks updated to display!");	

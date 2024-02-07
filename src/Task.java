@@ -31,6 +31,7 @@ public class Task {
 	}
 	
 	public void displayID() {
+		
 		System.out.println("Task ID: " + id + "| Task Name: " + name + "| Task Description: " + description);
 	}
 }
