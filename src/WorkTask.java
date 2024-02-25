@@ -1,14 +1,22 @@
 
-public class WorkTask extends Task{
+
+public class WorkTask extends Task implements Remindable{
 	
 	public WorkTask(int id, String name, String description) {
 		super(id, name, description);
 		
 	}
 	
-	public void displayID() {
+	public String toString() {
 		
-		System.out.println("Work Task ID: " + getId() + ", Name: " + getName() + ", Description: " + getDescription());
+		return "Team Work Task ID: " + getId() + ", Name: " + getName() + ", Description: " + getDescription();
+	
+	}
+	
+	public void remindUser() {
+		System.out.println("Reminder for Work Task: " + getName() + "| This task is important!");
 		System.out.println();
 	}
+	
+
 }

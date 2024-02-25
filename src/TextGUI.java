@@ -10,6 +10,7 @@ public class TextGUI {
 		
 	}
 	
+	
 	Scanner scan = new Scanner(System.in);
 	
 	TaskManager taskManager = new TaskManager();
@@ -78,6 +79,8 @@ public class TextGUI {
 		
 		PersonalTask  personalTask = new PersonalTask(taskId, taskName, taskDescription);
 		taskManager.addTask(personalTask);
+		System.out.println("Task added successfully!");
+		System.out.println();
 		
 		}
 
@@ -96,6 +99,8 @@ public class TextGUI {
 		
 		WorkTask workTask = new WorkTask(taskId, taskName, taskDescription);
 		taskManager.add(workTask);
+		System.out.println("Task added successfully!");
+		System.out.println();
 		
 	}
 	
@@ -119,6 +124,8 @@ public class TextGUI {
 		
 		TeamWorkTask teamWorkTask = new TeamWorkTask(taskId, taskName, taskDescription, teamName);
 		taskManager.add(teamWorkTask);
+		System.out.println("Task added successfully!");
+		System.out.println();
 		
 	}
 

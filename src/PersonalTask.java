@@ -6,9 +6,10 @@ public class PersonalTask extends Task {
 		
 	}
 	
-	public void displayID() {
+	@Override
+	public String toString() {
 		
-		System.out.println("Personal Task ID: " + getId() + ", Name: " + getName() + ", Description: " + getDescription()) ;
-		System.out.println();
+		return "Personal Task ID: " + getId() + ", Name: " + getName() + ", Description: " + getDescription();
+		
 	}
 }

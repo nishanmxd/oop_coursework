@@ -1,5 +1,5 @@
 
-public class TeamWorkTask extends WorkTask{
+public class TeamWorkTask extends WorkTask implements Remindable{
 	
 	private String teamName;
 
@@ -15,8 +15,15 @@ public class TeamWorkTask extends WorkTask{
 		
 	}
 	
-	public void displayID() {
-		System.out.println("Team Work Task ID: " + getId() + ", Name: " + getName() + ", Description: " + getDescription() + ", Team Name: " + getTeamName() );
+	@Override
+	public String toString() {
+		
+		return "Team Work Task ID: " + getId() + ", Name: " + getName() + ", Description: " + getDescription() + ", Team Name: " + getTeamName();
+
+	}
+	
+	public void remindUser() {
+		System.out.println("Reminder for Team Work Task: " + getName() + " | This task is important!");
 		System.out.println();
 	}
 

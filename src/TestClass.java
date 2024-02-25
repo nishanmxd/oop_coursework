@@ -3,14 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestClass {
 	
-	@Test
-	public void addTask() {
-		TaskManager taskManager = new TaskManager();
-		Task task = new Task(1, "xyz", "abc");
-		
-		assertTrue(taskManager.addTask(task));
-		assertEquals(1, taskManager.getSize());
-	}
+	
 	
 	@Test
 	public void addWorkTask() {
@@ -46,7 +39,7 @@ public class TestClass {
 	@Test
 	public void removeTask() {
 		TaskManager taskManager = new TaskManager();
-		Task task = new Task(1, "xyz", "abc");
+		Task task = new PersonalTask(1, "xyz", "abc");
 		
 		assertTrue(taskManager.addTask(task));
 		assertTrue(taskManager.removeTask(1));
@@ -58,8 +51,8 @@ public class TestClass {
 	@Test
 	public void addDuplicate()  {
 		TaskManager taskManager = new TaskManager();
-		Task task1 = new Task(1, "xyz", "abc");
-		Task task2 = new Task(1, "lmn", "def");
+		Task task1 = new PersonalTask(1, "xyz", "abc");
+		Task task2 = new PersonalTask(1, "lmn", "def");
 		
 		assertTrue(taskManager.addTask(task1));
 		assertFalse(taskManager.addTask(task2));

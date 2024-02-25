@@ -1,5 +1,5 @@
 
-public class Task {
+public abstract class Task {
 	
 	//fields
 	private int id;
@@ -31,7 +31,10 @@ public class Task {
 		return description;
 	}
 	
-	public void displayID() {
+	@Override
+	public String toString() {
 		
+		 return "Task ID: " + id + ", Name: " + name + ", Description: " + description ;
 	}
+		
 }

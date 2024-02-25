@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 
 public class TaskManager extends HashSet <Task> {
@@ -53,9 +56,30 @@ public class TaskManager extends HashSet <Task> {
 			System.out.println();
 			
 			for(Task task : this) {
-				task.displayID();
+				System.out.println(task);
+				
+				if (task instanceof WorkTask || task instanceof TeamWorkTask) {
+	                ((Remindable) task).remindUser();
+				}
 			}
 		}
 	}
-
+	
+	public void toFile() throws IOException {
+		
+		BufferedWriter out = new BufferedWriter(new FileWriter("tasks.txt"));
+		
+		for(Task task: this) {
+			
+			out.write(task.toString() + "\n");
+			
+		}
+			
+			out.close();
+		
+	}
+		
+	
 }
+
+
